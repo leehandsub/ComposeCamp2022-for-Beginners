@@ -24,6 +24,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -42,9 +43,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayGreetingWithText(message: String) {
     // Create a column so that texts don't overlap
-    Column {
-        Text(text = message)
-    }
+    Text(
+        text = message,
+        fontSize = 36.sp
+    )
 }
 
 // 5. Box 레이아웃 추
