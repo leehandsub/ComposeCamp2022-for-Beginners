@@ -19,6 +19,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -41,16 +42,18 @@ class MainActivity : ComponentActivity() {
 
 // 7. 텍스트 정렬 및 패딩 추가
 @Composable
-fun BirthdayGreetingWithText(message: String, from : String) {
+fun BirthdayGreetingWithText(message: String, from: String) {
     // Create a column so that texts don't overlap
-    Text(
-        text = message,
-        fontSize = 36.sp
-    )
-    Text(
-        text = from,
-        fontSize = 24.sp
-    )
+    Column {
+        Text(
+            text = message,
+            fontSize = 36.sp,
+        )
+        Text(
+            text = from,
+            fontSize = 24.sp,
+        )
+    }
 }
 
 // 5. Box 레이아웃 추
@@ -63,7 +66,7 @@ fun BirthdayGreetingWithImage(message: String, from: String) {
 @Composable
 private fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        BirthdayGreetingWithText( "Happy Birthday Sam!", "- from Emma")
+        BirthdayGreetingWithText("Happy Birthday Sam!", "- from Emma")
     }
 }
 
