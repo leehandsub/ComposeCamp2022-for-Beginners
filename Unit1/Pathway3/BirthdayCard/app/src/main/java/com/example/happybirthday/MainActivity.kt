@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting(name = "이현섭")// 이거 왜 있는 거지? 진짜 실행하면 이게 나오는 듯?
                 }
             }
         }
@@ -41,9 +40,11 @@ class MainActivity : ComponentActivity() {
 
 // 7. 텍스트 정렬 및 패딩 추가
 @Composable
-fun BirthdayGreetingWithText(message: String, from: String) {
+fun BirthdayGreetingWithText(message: String) {
     // Create a column so that texts don't overlap
-    Column { }
+    Column {
+        Text(text = message)
+    }
 }
 
 // 5. Box 레이아웃 추
@@ -56,12 +57,7 @@ fun BirthdayGreetingWithImage(message: String, from: String) {
 @Composable
 private fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        Greeting("android")
+        BirthdayGreetingWithText("Happy Birthday Sam!")
     }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
 }
 
